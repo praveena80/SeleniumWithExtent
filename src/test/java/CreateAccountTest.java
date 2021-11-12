@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
 
-public class CreateAccountTest extends baseTest.BaseTest {
+public class CreateAccountTest extends BaseTest {
 
     @Test
     public void createAccount() {
