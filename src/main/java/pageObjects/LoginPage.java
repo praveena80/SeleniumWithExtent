@@ -41,10 +41,6 @@ public class LoginPage {
         return driver.findElement(registerLink).getText();
     }
 
-    public String generateRandomString(int length){
-        return RandomStringUtils.randomAlphabetic(length);
-    }
-
     public Boolean enterTheStoreLinkIsDisplayed() {
 
         return driver.findElement(enterStoreLink).isDisplayed();
