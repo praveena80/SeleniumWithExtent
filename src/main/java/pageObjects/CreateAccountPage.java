@@ -1,18 +1,23 @@
 package pageObjects;
 
+import frameWork.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CreateAccountPage {
-    WebDriver driver;
+
+public class CreateAccountPage extends PageObjectBase {
 
     public CreateAccountPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     By userNameTextBox = By.name("username");
 
     public void setUserName() {
-        driver.findElement(userNameTextBox).sendKeys("automation1");
+        driver.findElement(userNameTextBox).sendKeys(generateRandomString(6));
     }
+
+//    public void setUserNameWithPara(String userName) {
+//        driver.findElement(userNameTextBox).sendKeys(userName);
+//    }
 }
