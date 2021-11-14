@@ -28,7 +28,6 @@ public class PageObjectBase {
                 break;
             }
         }
-
 //        //Other way to select dropdown
 //        WebElement dropDown = driver.findElement(sortOption);
 //        Select dropDownOption = new Select(dropDown);
