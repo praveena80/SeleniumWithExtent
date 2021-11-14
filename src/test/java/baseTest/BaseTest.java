@@ -25,6 +25,7 @@ public class BaseTest {
         //Implicit wait example
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://petstore.octoperf.com/");
+//        driver.get("http://automationpractice.com/index.php");
     }
 
     @AfterTest
