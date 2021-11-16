@@ -16,14 +16,32 @@ public class CreateAccountTest extends BaseTest {
         LoginPage loginPO = new LoginPage(driver);
         CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
-        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
+//        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
         loginPO.selectStoreLink();
-        loginPO.selectSignInLick();
-        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
-        loginPO.selectRegisterLink();
+        loginPO.selectSignInLink();
+        loginPO.selectRegisterNow();
+        createAccountPO.setUserName();
+        createAccountPO.enterPassword();
+        createAccountPO.enterRepeatPassword();
+        createAccountPO.setFirstName();
+        createAccountPO.setLastName();
+        createAccountPO.setEmail();
+        createAccountPO.setPhone();
+        createAccountPO.setAddress1();
+        createAccountPO.setAddress2();
+        createAccountPO.setCity();
+        createAccountPO.setState();
+        createAccountPO.setZip();
+        createAccountPO.setCountry();
+        createAccountPO.setEnableMyList();
+        createAccountPO.setEnableMyBanner();
+        createAccountPO.setSaveAccount();
+//        loginPO.selectSignInLick();
+//        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+//        loginPO.selectRegisterLink();
 //        createAccountPO.setUserName(userName); This line for Parameterization
         createAccountPO.setUserName();
-        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+   //     Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
     }
 
 
