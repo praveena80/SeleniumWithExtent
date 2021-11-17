@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends PageObjectBase {
-    WebDriver driver;
+//    WebDriver driver;
 
     // Constructor
     // Gets called when object of this page is created in MainClass.java
@@ -20,8 +20,6 @@ public class LoginPage extends PageObjectBase {
     By enterStoreLink = By.linkText("Enter the Store");
     By signIn = By.linkText("Sign In");
     By registerNow = By.linkText("Register Now");
-//    By signIn = By.linkText("Sign In");
-//    By registerLink = By.linkText("Register Now!");
 
     //Method to click link
 //    public void selectStoreLink() {
@@ -44,10 +42,9 @@ public class LoginPage extends PageObjectBase {
 //        return driver.findElement(registerLink).getText();
 //    }
 //
-//    public Boolean enterTheStoreLinkIsDisplayed() {
-//
-//        return driver.findElement(enterStoreLink).isDisplayed();
-//    }
+    public Boolean enterTheStoreLinkIsDisplayed() {
+        return driver.findElement(enterStoreLink).isDisplayed();
+    }
     public void selectStoreLink(){
         waitForVisibilityOfElement(driver.findElement(enterStoreLink));
         driver.findElement(enterStoreLink).click();

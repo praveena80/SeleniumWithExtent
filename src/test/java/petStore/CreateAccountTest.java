@@ -16,7 +16,7 @@ public class CreateAccountTest extends BaseTest {
         LoginPage loginPO = new LoginPage(driver);
         CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
-//        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
+        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
         loginPO.selectStoreLink();
         loginPO.selectSignInLink();
         loginPO.selectRegisterNow();
@@ -40,7 +40,7 @@ public class CreateAccountTest extends BaseTest {
 //        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
 //        loginPO.selectRegisterLink();
 //        createAccountPO.setUserName(userName); This line for Parameterization
-        createAccountPO.setUserName();
+//        createAccountPO.setUserName();
    //     Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
     }
 
