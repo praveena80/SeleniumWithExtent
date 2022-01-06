@@ -11,7 +11,7 @@ public class CreateAccountPage extends PageObjectBase {
     public CreateAccountPage(WebDriver driver) {
         super(driver);
     }
-
+//Creating variables
     By userNameTextBox = By.name("username");
     By password = By.name("password");
     By repeatPassword = By.name("repeatedPassword");
@@ -25,6 +25,8 @@ public class CreateAccountPage extends PageObjectBase {
     By state        =   By.name("account.state");
     By zip          =   By.name("account.zip");
     By country      =   By.name("account.country");
+    By language     =   By.xpath("//*[@id=\"Catalog\"]/form/table[3]/tbody/tr[1]/td[2]/select/option");
+    By favCategory  =   By.xpath("//*[@id=\"Catalog\"]/form/table[3]/tbody/tr[2]/td[2]/select/option");
     By enableMyList =   By.name("account.listOption");
     By enableMyBanner=  By.name("account.bannerOption");
     By saveAccount   =  By.name("newAccount");
@@ -70,6 +72,14 @@ public class CreateAccountPage extends PageObjectBase {
     public void setCountry(){
         driver.findElement(country).sendKeys("India");
     }
+    public void setLanguage(){
+        selectOptionFromSortLit(language,"japanese");
+    }
+    //Parameterization. This helps to use multiple option selections
+    public void setFavCategory(String option){
+        selectOptionFromSortLit(favCategory,option);
+    }
+
     public void setEnableMyList(){
         driver.findElement(enableMyList).click();
     }
