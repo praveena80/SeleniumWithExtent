@@ -43,8 +43,10 @@ public class LoginPage extends PageObjectBase {
 //    }
 //
     public Boolean enterTheStoreLinkIsDisplayed() {
+
         return driver.findElement(enterStoreLink).isDisplayed();
     }
+
     public void selectStoreLink(){
         waitForVisibilityOfElement(driver.findElement(enterStoreLink));
         driver.findElement(enterStoreLink).click();
@@ -52,6 +54,7 @@ public class LoginPage extends PageObjectBase {
     public void selectSignInLink(){
         driver.findElement(signIn).click();
     }
+
     public void selectRegisterNow (){
         waitForVisibilityOfElement(driver.findElement(registerNow));
         driver.findElement(registerNow).click();
