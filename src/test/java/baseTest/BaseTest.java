@@ -18,6 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -28,6 +29,10 @@ public class BaseTest {
 
     @BeforeSuite
     public void setUp() {
+//        report = ExtentManager.createInstance("extent.html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
+        report.attachReporter(htmlReporter);
+
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
@@ -35,25 +40,34 @@ public class BaseTest {
 
     @BeforeClass
     public void goToWebsite() {
-        // initialize the HtmlReporter
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/testReport.html");
+//        // initialize the HtmlReporter
+//        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/testReport.html");
+//
+//        //initialize ExtentReports and attach the HtmlReporter
+//        report = new ExtentReports();
+//        report.attachReporter(htmlReporter);
 
-        //initialize ExtentReports and attach the HtmlReporter
-        report = new ExtentReports();
-        report.attachReporter(htmlReporter);
+//        htmlReporter.config().setChartVisibilityOnOpen(true);
+//        htmlReporter.config().setDocumentTitle("Extent Report Demo");
+//        htmlReporter.config().setReportName("Test Report");
+//        htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+//        htmlReporter.config().setTheme(Theme.STANDARD);
+//        htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 
-        htmlReporter.config().setChartVisibilityOnOpen(true);
-        htmlReporter.config().setDocumentTitle("Extent Report Demo");
-        htmlReporter.config().setReportName("Test Report");
-        htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
-        htmlReporter.config().setTheme(Theme.STANDARD);
-        htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
+        ExtentTest parent = report.createTest(getClass().getName());
+//        parentTest.set(parent);
 
         driver.manage().window().maximize();
         //Implicit wait example
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://petstore.octoperf.com/");
 //        driver.get("http://automationpractice.com/index.php");
+    }
+
+    @BeforeMethod
+    public synchronized void beforeMethod(Method method) {
+//        ExtentTest child = parentTest.get().createNode(method.getName());
+//        test.set(child);
     }
 
     @AfterTest
