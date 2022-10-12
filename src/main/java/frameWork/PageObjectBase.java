@@ -4,6 +4,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -32,5 +34,15 @@ public class PageObjectBase {
 //        WebElement dropDown = driver.findElement(sortOption);
 //        Select dropDownOption = new Select(dropDown);
 //        dropDownOption.selectByValue("price:desc");
+    }
+
+    public void waitForElementVisibility(By element) {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+
+    public void waitForElementPresent(By element) {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 }

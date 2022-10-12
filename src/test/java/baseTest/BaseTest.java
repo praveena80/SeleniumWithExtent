@@ -3,24 +3,17 @@ package baseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public WebDriver driver;
 
-    @BeforeSuite
-    public void setUp() {
+    @BeforeMethod
+    public void goToWebsite() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-    }
-
-    @BeforeTest
-    public void goToWebsite() {
         driver.manage().window().maximize();
         //Implicit wait example
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -28,12 +21,12 @@ public class BaseTest {
 //        driver.get("http://automationpractice.com/index.php");
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeWindow(){
         driver.close();
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }

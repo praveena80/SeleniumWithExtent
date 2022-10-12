@@ -8,6 +8,7 @@ import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
 
 public class CreateAccountTest extends BaseTest {
+    String GlobalV = "This is global test";
 
     @Test
 //    @Parameters("userName")
@@ -16,15 +17,24 @@ public class CreateAccountTest extends BaseTest {
         LoginPage loginPO = new LoginPage(driver);
         CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
+        System.out.println(GlobalV);
         Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
-        loginPO.selectStoreLink();
-        loginPO.selectSignInLick();
-        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
-        loginPO.selectRegisterLink();
-//        createAccountPO.setUserName(userName); This line for Parameterization
-        createAccountPO.setUserName();
-        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+////        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
+//        loginPO.selectStoreLink();
+//        loginPO.selectSignInLick();
+//        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+//        loginPO.selectRegisterLink();
+////        createAccountPO.setUserName(userName); This line for Parameterization
+//        createAccountPO.setUserName();
+//        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
     }
+    @Test
+    public void verifyingEnterStoreLinkDisplay(){
+        LoginPage loginPO = new LoginPage(driver);
 
+//        GlobalV = "This is second test";
+        System.out.println(GlobalV);
+        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
+    }
 
 }
