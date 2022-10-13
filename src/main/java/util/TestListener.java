@@ -12,7 +12,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult Result) {
-        System.out.println("The name of the testcase passed is :"+Result.getName());
+        System.out.println(Result.getName() + " - testcase passed");
     }
 
     @Override

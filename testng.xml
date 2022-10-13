@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="petStore.CreateAccountTest"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/prave/IdeaProjects/Selenium-2">
 <!--        <parameter name="userName" value="Praveena"></parameter>-->
-        
         <classes>
             <class name="petStore.CreateAccountTest"></class>
         </classes>
