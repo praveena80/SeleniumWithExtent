@@ -3,12 +3,14 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="util.listeners.TestListener"/>
-        <listener class-name="util.listeners.AnnotationTransformer"/>
+      <!--  <listener class-name="util.listeners.AnnotationTransformer"/> -->
     </listeners>
-    <test name="createAccount">
-<!--        <parameter name="userName" value="Praveena"></parameter>-->
+    <parameter name="browserType" value="chrome"></parameter>
+    <parameter name="appUrl" value="https://petstore.octoperf.com/"></parameter>
+
+    <test name="PetStore tests">
         <classes>
-            <class name="petStore.CreateAccountTest"></class>
+            <class name="petStore.CreateAccountTest"/>
         </classes>
     </test>
 </suite>

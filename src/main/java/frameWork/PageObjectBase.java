@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class PageObjectBase {
-    public WebDriver driver;
+    protected WebDriver driver;
     public WebDriverWait wait;
 
     public PageObjectBase(WebDriver driver) {
