@@ -1,0 +1,30 @@
+[INFO ] 2023-01-19 09:54:46.221 [main] Log - I am in onStart method createAccount
+[INFO ] 2023-01-19 09:54:46.508 [main] Log - Tests is starting!
+[INFO ] 2023-01-19 09:54:46.527 [main] Log - createAccount test is starting.
+[INFO ] 2023-01-19 09:54:46.527 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-19 09:54:46.606 [main] Log - createAccount test is failed.
+[INFO ] 2023-01-19 09:54:46.606 [main] Log - I am in onFinish method createAccount
+[INFO ] 2023-01-19 10:13:06.566 [main] Log - I am in onStart method createAccount
+[INFO ] 2023-01-19 10:13:06.577 [main] Log - Tests is starting!
+[INFO ] 2023-01-19 10:13:23.062 [main] Log - createAccount test is starting.
+[INFO ] 2023-01-19 10:13:23.062 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-19 10:13:23.156 [main] Log - createAccount test is failed.
+[INFO ] 2023-01-19 10:13:23.157 [main] Log - I am in onFinish method createAccount
+[INFO ] 2023-01-19 10:24:14.136 [main] Log - I am in onStart method createAccount
+[INFO ] 2023-01-19 10:24:14.146 [main] Log - Tests is starting!
+[INFO ] 2023-01-19 10:24:14.618 [main] Log - createAccount test is starting.
+[INFO ] 2023-01-19 10:24:14.618 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-19 10:24:14.691 [main] Log - createAccount test is failed.
+[INFO ] 2023-01-19 10:24:14.691 [main] Log - I am in onFinish method createAccount
+[INFO ] 2023-01-19 10:30:04.140 [main] Log - I am in onStart method createAccount
+[INFO ] 2023-01-19 10:30:04.150 [main] Log - Tests is starting!
+[INFO ] 2023-01-19 10:30:04.609 [main] Log - createAccount test is starting.
+[INFO ] 2023-01-19 10:30:04.609 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-19 10:30:04.681 [main] Log - createAccount test is failed.
+[INFO ] 2023-01-19 10:30:04.682 [main] Log - I am in onFinish method createAccount
+[INFO ] 2023-01-19 10:40:19.283 [main] Log - I am in onStart method createAccount
+[INFO ] 2023-01-19 10:40:19.293 [main] Log - Tests is starting!
+[INFO ] 2023-01-19 10:40:19.756 [main] Log - createAccount test is starting.
+[INFO ] 2023-01-19 10:40:19.756 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-19 10:40:19.830 [main] Log - createAccount test is failed.
+[INFO ] 2023-01-19 10:40:19.831 [main] Log - I am in onFinish method createAccount

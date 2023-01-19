@@ -7,17 +7,22 @@ import org.testng.annotations.Test;
 import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
 
+import java.lang.reflect.Method;
+
+import static util.extentReport.ExtentTestManager.startTest;
+
 public class CreateAccountTest extends BaseTest {
     String GlobalV = "This is global test";
 
-    @Test
+    @Test(description = "create account")
 //    @Parameters("userName")
 //    public void createAccount(String userName) {      This line for Parameterization
-    public void createAccount() {
+    public void createAccount(Method method) {
         LoginPage loginPO = new LoginPage(driver);
         CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
         System.out.println(GlobalV);
+        startTest(method.getName(), "Create account");
         Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
 ////        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
 //        loginPO.selectStoreLink();

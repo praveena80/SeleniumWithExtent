@@ -1,18 +1,21 @@
 package pageObjects;
 
+import frameWork.PageObjectBase;
+import io.reactivex.rxjava3.observers.BaseTestConsumer;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends PageObjectBase {
     WebDriver driver;
 
     // Constructor
     // Gets called when object of this page is created in MainClass.java
     public LoginPage(WebDriver driverFromConstructor) {
+        super(driverFromConstructor);
         // "this" keyword is used here to distinguish global and local variable "driver"
         //gets driver as parameter from MainClass.java and assigns to the driver instance in this class
-        this.driver = driverFromConstructor;
+//        this.driver = driverFromConstructor;
     }
 
     //Locators
@@ -44,6 +47,11 @@ public class LoginPage {
     public Boolean enterTheStoreLinkIsDisplayed() {
 
         return driver.findElement(enterStoreLink).isDisplayed();
+    }
+
+    public LoginPage goToWebsite() {
+        driver.get("https://petstore.octoperf.com/");
+        return this;
     }
 
 }
