@@ -1,10 +1,7 @@
 package util.logs;
 
-import frameWork.PageObjectBase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v107.page.Page;
 
 public class Log  {
     //Initialize Log4j instance
