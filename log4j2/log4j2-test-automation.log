@@ -1,0 +1,42 @@
+[INFO ] 2023-01-23 15:37:06.414 [main] Log - I am in onStart method PetStore tests
+[INFO ] 2023-01-23 15:37:06.431 [main] Log - Opening PetSotre!
+[INFO ] 2023-01-23 15:37:16.747 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 15:37:16.792 [main] Log - title: true
+[INFO ] 2023-01-23 15:37:18.095 [main] Log - createAccount- test is succeed.
+[INFO ] 2023-01-23 15:37:18.174 [main] Log - createAccount- test is failed.
+[INFO ] 2023-01-23 15:37:18.284 [main] Log - Tests are ending!
+[INFO ] 2023-01-23 15:37:18.392 [main] Log - I am in onFinish method PetStore tests
+[INFO ] 2023-01-23 15:54:48.180 [main] Log - I am in onStart method PetStore tests
+[INFO ] 2023-01-23 15:54:48.191 [main] Log - Opening PetSotre!
+[INFO ] 2023-01-23 15:54:55.709 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 15:54:55.823 [main] Log - title: true
+[INFO ] 2023-01-23 15:54:57.124 [main] Log - createAccount- test is succeed.
+[INFO ] 2023-01-23 15:54:57.264 [main] Log - Tests are ending!
+[INFO ] 2023-01-23 15:54:57.320 [main] Log - I am in onFinish method PetStore tests
+[INFO ] 2023-01-23 15:56:47.949 [main] Log - I am in onStart method PetStore tests
+[INFO ] 2023-01-23 15:56:47.960 [main] Log - Opening PetSotre!
+[INFO ] 2023-01-23 15:56:56.388 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 15:56:56.504 [main] Log - title: true
+[INFO ] 2023-01-23 15:56:57.633 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-23 15:56:57.764 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 15:56:57.770 [main] Log - createAccount- test is failed.
+[INFO ] 2023-01-23 15:56:57.773 [main] Log - createAccount- test is failed.
+[INFO ] 2023-01-23 15:56:57.774 [main] Log - Tests are ending!
+[INFO ] 2023-01-23 15:56:57.837 [main] Log - I am in onFinish method PetStore tests
+[INFO ] 2023-01-23 16:01:21.663 [main] Log - I am in onStart method PetStore tests
+[INFO ] 2023-01-23 16:01:21.674 [main] Log - Opening PetSotre!
+[INFO ] 2023-01-23 16:01:29.438 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 16:01:29.553 [main] Log - title: true
+[INFO ] 2023-01-23 16:01:30.689 [main] Log - createAccount test is skipped.
+[INFO ] 2023-01-23 16:01:30.811 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 16:01:30.818 [main] Log - createAccount- test is failed.
+[INFO ] 2023-01-23 16:01:30.819 [main] Log - createAccount- test is failed.
+[INFO ] 2023-01-23 16:01:30.821 [main] Log - Tests are ending!
+[INFO ] 2023-01-23 16:01:30.877 [main] Log - I am in onFinish method PetStore tests
+[INFO ] 2023-01-23 16:01:49.377 [main] Log - I am in onStart method PetStore tests
+[INFO ] 2023-01-23 16:01:49.388 [main] Log - Opening PetSotre!
+[INFO ] 2023-01-23 16:01:56.265 [main] Log - createAccount- test is starting.
+[INFO ] 2023-01-23 16:01:56.375 [main] Log - title: true
+[INFO ] 2023-01-23 16:01:57.527 [main] Log - createAccount- test is succeed.
+[INFO ] 2023-01-23 16:01:57.654 [main] Log - Tests are ending!
+[INFO ] 2023-01-23 16:01:57.717 [main] Log - I am in onFinish method PetStore tests
