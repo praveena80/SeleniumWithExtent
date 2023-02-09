@@ -25,6 +25,7 @@ public class LoginPage extends PageObjectBase {
 
     //Method to click link
     public void selectStoreLink() {
+
         driver.findElement(enterStoreLink).click();
     }
 
