@@ -5,6 +5,8 @@ import io.reactivex.rxjava3.observers.BaseTestConsumer;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageObjectBase {
 //    private WebDriver driver;
@@ -23,10 +25,16 @@ public class LoginPage extends PageObjectBase {
     By signIn = By.linkText("Sign In");
     By registerLink = By.linkText("Register Now!");
 
+    @FindBy(linkText = "Sign In")
+    WebElement signInLink;
+
+    @FindBy(linkText = "Register Now!")
+    WebElement registerNowLink;
+
     //Method to click link
     public void selectStoreLink() {
-
-        driver.findElement(enterStoreLink).click();
+        clickOnWebElement(signInLink);
+//        driver.findElement(enterStoreLink).click();
     }
 
     public void selectSignInLick() {
@@ -37,17 +45,9 @@ public class LoginPage extends PageObjectBase {
         driver.findElement(registerLink).click();
     }
 
-    public String getEnterTheStoreText() {
-        return driver.findElement(enterStoreLink).getText();
-    }
 
     public String getRegisterLinkText() {
-        return driver.findElement(registerLink).getText();
-    }
-
-    public boolean enterTheStoreLinkIsDisplayed() {
-
-        return driver.findElement(enterStoreLink).isDisplayed();
+       return returnText(registerNowLink);
     }
 
     public boolean verifyPageTitle() {

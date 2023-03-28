@@ -1,9 +1,16 @@
 package baseTest;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import util.logs.Log;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class BaseTest {
     private WebDriver driver;
@@ -11,37 +18,33 @@ public class BaseTest {
         return driver;
     }
 
-//    @BeforeClass
-//    public void setDriver() {
-//        Log.info("Tests is starting!");
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        //Implicit wait example
-////        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-////        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
 
     private void setDriver(String browserType, String appUrl) {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        chromeOptions.addArguments("--remote-allow-origins=*");
         switch (browserType) {
             case "chrome" :
-                driver = initialization(appUrl);
+                driver = new ChromeDriver(chromeOptions);
+                WebDriverManager.chromedriver().setup();
+                initialization(appUrl);
                 break;
             case "firefox" :
+                if(driver == null) {
+                    driver = new FirefoxDriver();
+                }
                 break;
         }
     }
 
-    private static WebDriver initialization(String appUrl) {
-        //WebDriverManager.chromedriver().setup();
-        Log.info("Opening PetSotre!");
-       WebDriver driver = new ChromeDriver();
+    private  void initialization(String appUrl) {
+       Log.info("Opening PetSotre!");
        driver.manage().window().maximize();
        driver.navigate().to(appUrl);
-        return driver;
     }
 
     @Parameters({"browserType","appUrl"})
-    @BeforeClass
+    @BeforeMethod
     public void initializeBaseTestSteup(String browserType, String appUrl) {
         try{
             setDriver(browserType,appUrl);
@@ -51,13 +54,9 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeWindow(){
-        driver.close();
-    }
-
-    @AfterClass
     public void tearDown() {
         Log.info("Tests are ending!");
+        driver.close();
         driver.quit();
     }
 }

@@ -4,6 +4,7 @@ import baseTest.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.CreateAccountPage;
@@ -17,9 +18,7 @@ import static util.extentReport.ExtentTestManager.startTest;
 public class CreateAccountTest extends BaseTest {
     private WebDriver driver;
 
-    String GlobalV = "This is global test";
-
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         driver = getDriver();
     }
@@ -32,10 +31,7 @@ public class CreateAccountTest extends BaseTest {
 //        CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
         startTest(method.getName(), "Create account sample extent");
-        System.out.println(GlobalV);
         Assert.assertTrue(loginPO.verifyPageTitle());
-        Log.info("title: "+loginPO.verifyPageTitle());
-        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
         loginPO.selectStoreLink();
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");

@@ -6,11 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.CommonMethods;
 
 import java.time.Duration;
 import java.util.List;
 
-public class PageObjectBase {
+public class PageObjectBase extends CommonMethods {
     protected WebDriver driver;
     public WebDriverWait wait;
 
@@ -23,29 +24,5 @@ public class PageObjectBase {
         return RandomStringUtils.randomAlphabetic(numb);
     }
 
-    //Selecting elements from dropdown. Pass element variable and String text
-    public void selectOptionFromSortLit(By options, String text) {
-        List<WebElement> allOptions = driver.findElements(options);
-        for(WebElement option : allOptions){
-            if(option.getText().equals(text)) {
-                System.out.println(option.getText());
-                option.click();
-                break;
-            }
-        }
-//        //Other way to select dropdown
-//        WebElement dropDown = driver.findElement(sortOption);
-//        Select dropDownOption = new Select(dropDown);
-//        dropDownOption.selectByValue("price:desc");
-    }
 
-    public void waitForElementVisibility(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-    }
-
-    public void waitForElementPresent(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(element));
-    }
 }
