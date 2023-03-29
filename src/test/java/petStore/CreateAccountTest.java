@@ -32,7 +32,6 @@ public class CreateAccountTest extends BaseTest {
 
         startTest(method.getName(), "Create account sample extent");
         Assert.assertTrue(loginPO.verifyPageTitle());
-        loginPO.selectStoreLink();
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
 //        loginPO.selectRegisterLink();

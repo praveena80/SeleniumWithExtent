@@ -5,8 +5,8 @@
         <listener class-name="util.listeners.TestListener"/>
         <listener class-name="util.listeners.AnnotationTransformer"/>
     </listeners>
-    <parameter name="browserType" value="chrome"></parameter>
-    <parameter name="appUrl" value="https://jpetstore.aspectran.com/catalog/"></parameter>
+<!--    <parameter name="browserType" value="chrome"></parameter>
+    <parameter name="appUrl" value="https://jpetstore.aspectran.com/catalog/"></parameter> -->
 
     <test name="PetStore tests">
         <classes>

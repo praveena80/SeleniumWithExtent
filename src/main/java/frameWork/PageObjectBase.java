@@ -12,13 +12,27 @@ import java.time.Duration;
 import java.util.List;
 
 public class PageObjectBase extends CommonMethods {
-    protected WebDriver driver;
+//    protected static WebDriver driver;
     public WebDriverWait wait;
 
+    /**
+     * Passing Webdriver object so that each class
+     * can access the current browser instance
+     * @param driver
+     */
     public PageObjectBase(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       super(driver);
+//       this.driver = driver;
     }
+
+    /**
+     * Defines a WebDriver object, instantiates it, and then sets it in this page.
+     * Subsequent page classes then inherit from this page, thus automatically having access to the driver.
+//     * @param driver
+     */
+//    public void setWebDriver(WebDriver driver){
+//        PageObjectBase.driver = driver;
+//    }
 
     public String generateRandomString(int numb){
         return RandomStringUtils.randomAlphabetic(numb);

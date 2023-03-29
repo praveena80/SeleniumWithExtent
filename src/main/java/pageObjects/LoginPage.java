@@ -7,23 +7,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends PageObjectBase {
-//    private WebDriver driver;
-
+    /**
+     * Page factory initiation is required for elements
+     * @param driverFromConstructor
+     */
     // Constructor
     // Gets called when object of this page is created in MainClass.java
     public LoginPage(WebDriver driverFromConstructor) {
         super(driverFromConstructor);
-        // "this" keyword is used here to distinguish global and local variable "driver"
-        //gets driver as parameter from MainClass.java and assigns to the driver instance in this class
-//        this.driver = driverFromConstructor;
+        PageFactory.initElements(driver, this);
     }
 
-    //Locators
-    By enterStoreLink = By.linkText("Enter the Store");
-    By signIn = By.linkText("Sign In");
-    By registerLink = By.linkText("Register Now!");
 
     @FindBy(linkText = "Sign In")
     WebElement signInLink;
@@ -31,20 +28,14 @@ public class LoginPage extends PageObjectBase {
     @FindBy(linkText = "Register Now!")
     WebElement registerNowLink;
 
-    //Method to click link
-    public void selectStoreLink() {
-        clickOnWebElement(signInLink);
-//        driver.findElement(enterStoreLink).click();
-    }
 
     public void selectSignInLick() {
-        driver.findElement(signIn).click();
+        clickOnWebElement(signInLink);
     }
 
     public void selectRegisterLink() {
-        driver.findElement(registerLink).click();
+        clickOnWebElement(registerNowLink);
     }
-
 
     public String getRegisterLinkText() {
        return returnText(registerNowLink);
@@ -55,10 +46,5 @@ public class LoginPage extends PageObjectBase {
         String title = driver.getTitle();
         return title.contains(pageTitle);
     }
-
-//    public LoginPage goToWebsite() {
-//        driver.get("https://petstore.octoperf.com/");
-//        return this;
-//    }
 
 }

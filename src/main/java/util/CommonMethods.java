@@ -12,12 +12,17 @@ import java.util.List;
 
 
 public class CommonMethods {
-    public static WebDriver driver;
+    public WebDriver driver;
     public WebDriverWait wait ;
+
+    public CommonMethods(WebDriver driver) {
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
     public void waitForElement( WebElement element){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void waitForByElement( By element){
@@ -30,7 +35,7 @@ public class CommonMethods {
         element.click();
     }
 
-    public void sendKeysOnTextBox(WebElement element, String text) {
+    public void sendKeysInTextBox(WebElement element, String text) {
         waitForElement(element);
         element.clear();
         element.sendKeys(text);
