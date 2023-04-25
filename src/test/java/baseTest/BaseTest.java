@@ -82,7 +82,7 @@ public class BaseTest {
     }
 
     private  void initialization() {
-       Log.info("Opening PetSotre!");
+       Log.info("Opening PetStore!");
        driver.manage().window().maximize();
        driver.get(baseUrl);
     }
