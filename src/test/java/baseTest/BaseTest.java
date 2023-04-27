@@ -82,13 +82,13 @@ public class BaseTest {
     }
 
     private  void initialization() {
-       Log.info("Opening PetStore!");
+       Log.info("Opening Website:" + baseUrl);
        driver.manage().window().maximize();
        driver.get(baseUrl);
     }
 
     @BeforeMethod
-    public void initializeBaseTestSteup() {
+    public void initializeBaseTestSetup() {
         try{
             setDriver();
         } catch (Exception e) {

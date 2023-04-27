@@ -39,6 +39,7 @@ public class PropertyManager {
         }
         //Get properties from config.properties
         url = prop.getProperty("appUrl");
+//        url = prop.getProperty("partyWheels");
         browserType = prop.getProperty("browserType");
     }
     public String getURL () {
