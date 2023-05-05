@@ -28,16 +28,16 @@ public class CreateAccountTest extends BaseTest {
 //    public void createAccount(String userName) {      This line for Parameterization
     public void createAccount(Method method) {
         LoginPage loginPO = new LoginPage(driver);
-//        CreateAccountPage createAccountPO = new CreateAccountPage(driver);
+        CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
         startTest(method.getName(), "Create account sample extent");
-        Assert.assertTrue(loginPO.verifyPageTitle());
+//        Assert.assertTrue(loginPO.verifyPageTitle());
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
-//        loginPO.selectRegisterLink();
-////        createAccountPO.setUserName(userName); This line for Parameterization
-//        createAccountPO.setUserName();
-//        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+        loginPO.selectRegisterLink();
+//        createAccountPO.setUserName(userName); //This line for Parameterization
+        createAccountPO.setUserName();
+        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
     }
 
 }

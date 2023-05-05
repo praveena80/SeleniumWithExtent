@@ -1,7 +1,16 @@
-[INFO ] 2023-02-09 14:06:21.187 [main] Log - I am in onStart method PetStore tests
-[INFO ] 2023-02-09 14:06:21.213 [main] Log - Opening PetSotre!
-[INFO ] 2023-02-09 14:06:25.571 [main] Log - createAccount- test is starting.
-[INFO ] 2023-02-09 14:06:25.778 [main] Log - title: true
-[INFO ] 2023-02-09 14:06:26.754 [main] Log - createAccount- test is succeed.
-[INFO ] 2023-02-09 14:06:26.801 [main] Log - Tests are ending!
-[INFO ] 2023-02-09 14:06:27.340 [main] Log - I am in onFinish method PetStore tests
+[INFO ] 2023-05-05 14:00:31.062 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:00:32.959 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:03:25.744 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:03:27.671 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:07:21.258 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:09:16.000 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:14:11.499 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:14:35.569 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:15:08.099 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:15:42.880 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:19:00.054 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:19:37.807 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 14:57:13.244 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 14:57:15.668 [main] Log - Tests are ending!
+[INFO ] 2023-05-05 15:00:37.258 [main] Log - Opening Website:https://jpetstore.aspectran.com/catalog/
+[INFO ] 2023-05-05 15:00:50.523 [main] Log - Tests are ending!

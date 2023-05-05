@@ -12,7 +12,6 @@ import java.time.Duration;
 import java.util.List;
 
 public class PageObjectBase extends CommonMethods {
-    public WebDriverWait wait;
 
     /**
      * Passing Webdriver object so that each class

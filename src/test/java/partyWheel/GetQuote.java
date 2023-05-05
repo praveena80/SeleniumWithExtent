@@ -18,6 +18,7 @@ public class GetQuote extends BaseTest {
     public void getQuoteFromHome() {
         HomePage homePO = new HomePage(driver);
 
-        homePO.clickGetQuoteBtn();
+//        homePO.clickGetQuoteBtn();
+        homePO.selectElementOption();
     }
 }

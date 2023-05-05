@@ -15,17 +15,17 @@ import java.util.concurrent.TimeUnit;
 
 
 public class CommonMethods {
-    public WebDriver driver;
+    protected WebDriver driver;
     public WebDriverWait wait ;
     JavascriptExecutor js;
+    Actions actions;
 
     public CommonMethods(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         js = (JavascriptExecutor) driver;
+        actions = new Actions(driver);
     }
-
-    Actions actions =  new Actions(driver);
 
     public void waitForElement( WebElement element){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

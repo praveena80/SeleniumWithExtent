@@ -20,6 +20,14 @@ public class HomePage extends PageObjectBase {
     @FindBy (xpath = "//button/span[contains(text(),'Get')]")
     WebElement getQuoteBtn;
 
+    @FindBy(xpath = "//h5[contains(text(),'Elements')]")
+    WebElement elementsOption;
+
+    //Method to click link
+    public void selectElementOption() {
+        clickOnWebElement(elementsOption);
+    }
+
     public void clickGetQuoteBtn(){
         clickOnWebElement(getQuoteBtn);
     }
