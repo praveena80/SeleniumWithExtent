@@ -111,6 +111,10 @@ public class CommonMethods {
         return element.getText();
     }
 
+    public String getAttributeValue(WebElement element) {
+        return element.getAttribute("value");
+    }
+
     public void hoverOnElement(WebElement e) {
         actions.moveToElement(e).build().perform();
     }

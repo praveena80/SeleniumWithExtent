@@ -7,8 +7,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pageNavigation.CreateAcInfoFill;
 import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
+import pageObjects.SignInPage;
 import util.logs.Log;
 
 import java.lang.reflect.Method;
@@ -17,27 +19,57 @@ import static util.extentReport.ExtentTestManager.startTest;
 
 public class CreateAccountTest extends BaseTest {
     private WebDriver driver;
+    LoginPage loginPO;
+    CreateAccountPage createAccountPO;
+    CreateAcInfoFill createAcFillPO;
+    SignInPage signInPO;
 
     @BeforeMethod
     public void setup() {
         driver = getDriver();
+        loginPO = new LoginPage(driver);
+        createAccountPO = new CreateAccountPage(driver);
+        createAcFillPO = new CreateAcInfoFill();
+        signInPO = new SignInPage(driver);
     }
 
+    String usrName;
+
     @Test(description = "create account")
-//    @Parameters("userName")
-//    public void createAccount(String userName) {      This line for Parameterization
     public void createAccount(Method method) {
-        LoginPage loginPO = new LoginPage(driver);
-        CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
         startTest(method.getName(), "Create account sample extent");
-//        Assert.assertTrue(loginPO.verifyPageTitle());
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
         loginPO.selectRegisterLink();
-//        createAccountPO.setUserName(userName); //This line for Parameterization
-        createAccountPO.setUserName();
-        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+//        createAccountPO.setUserName();
+//        createAccountPO.setValueForNewPassword();
+//        usrName = createAccountPO.getUserName();
+//        createAccountPO.setValueForRepeatedPassword();
+        usrName = createAcFillPO.fillUserInfo();
+//        createAccountPO.setValueForFirstName();
+//        createAccountPO.setValuesForLastName();
+//        createAccountPO.setValueForEmail();
+//        createAccountPO.setValueForPhoneNumber();
+//        createAccountPO.setValueForAddress1();
+//        createAccountPO.setValueForAddress2();
+//        createAccountPO.setValueForCity();
+//        createAccountPO.setValueForState();
+//        createAccountPO.setValueForZip();
+//        createAccountPO.setValueForCountry();
+//        createAccountPO.clickLanguagePreference("english");
+//        createAccountPO.clickFavouriteCategory("Fish");
+//        createAccountPO.clickEnableMyListCheckBox();
+//        createAccountPO.clickEnableMyBannerCheckBox();
+        createAcFillPO.fillAccountInfo();
+        createAccountPO.clickSaveAccountInformationButton();
+        Assert.assertTrue(signInPO.signInLinkIsDisplayed());
+        signInPO.clickSignInOption();
+        usrName = createAccountPO.getUserName();
+        createAccountPO.setUserNameInLogin(usrName);
+        createAccountPO.setValueForNewPassword();
+        signInPO.clickLogInButton();
+        Assert.assertTrue(signInPO.myAccountLinkIsDisplayed());
     }
 
 }
