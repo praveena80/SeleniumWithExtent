@@ -39,7 +39,7 @@ public class CommonMethods {
 
     public void clickOnWebElement(WebElement element) {
        waitForElement(element);
-        element.click();
+       element.click();
     }
 
     public void clickElementUsingJavScriptExecutor(WebElement element){
@@ -58,9 +58,9 @@ public class CommonMethods {
     }
 
     public void selectByVisibleText(WebElement element, String text) {
-        waitForElement(element);
+//        waitForElement(element);
         Select dropDownOption = new Select(element);
-        dropDownOption.selectByValue(text);
+        dropDownOption.selectByVisibleText(text);
     }
 
     public void selectOptionFromSortLit(By options, String text) {

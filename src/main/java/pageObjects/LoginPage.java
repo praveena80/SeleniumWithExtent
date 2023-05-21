@@ -24,13 +24,23 @@ public class LoginPage extends PageObjectBase {
 
     @FindBy(linkText = "Sign In")
     WebElement signInLink;
-
     @FindBy(linkText = "Register Now!")
     WebElement registerNowLink;
+    @FindBy(linkText = "My Account")
+    WebElement myAccountLink;
+
+    @FindBy(xpath = "*//div/button[contains(text(),'Login')]")
+    WebElement loginButton;
+    @FindBy(id = "MessageBar")
+    WebElement messageBar;
 
 
     public void selectSignInLick() {
         clickOnWebElement(signInLink);
+    }
+
+    public boolean verifySignInLink() {
+        return isElementDisplayed(signInLink);
     }
 
     public void selectRegisterLink() {
@@ -41,6 +51,17 @@ public class LoginPage extends PageObjectBase {
        return returnText(registerNowLink);
     }
 
+    public boolean isMyAccountLinkDisplayed() {
+        return isElementDisplayed(myAccountLink);
+    }
+
+    public Boolean verifyAccountCreationMessage() {
+        return isElementDisplayed(messageBar);
+    }
+
+    public void clickLoginBtn() {
+        clickOnWebElement(loginButton);
+    }
     public boolean verifyPageTitle() {
         String pageTitle = "JPetStore Demo";
         String title = driver.getTitle();
