@@ -3,12 +3,11 @@ package petStore;
 import baseTest.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageNavigation.CreateAcInfoFill;
 import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
-import util.logs.Log;
 
 import java.lang.reflect.Method;
 
@@ -16,33 +15,36 @@ import static util.extentReport.ExtentTestManager.startTest;
 
 public class CreateAccountTest extends BaseTest {
     private WebDriver driver;
+    LoginPage loginPO;
+    CreateAccountPage createAccountPO;
+    CreateAcInfoFill createAcFillPO;
 
-    String GlobalV = "This is global test";
-
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         driver = getDriver();
+        loginPO = new LoginPage(driver);
+        createAccountPO = new CreateAccountPage(driver);
+        createAcFillPO = new CreateAcInfoFill(driver);
     }
 
+    String usrName;
+
     @Test(description = "create account")
-//    @Parameters("userName")
-//    public void createAccount(String userName) {      This line for Parameterization
     public void createAccount(Method method) {
-        LoginPage loginPO = new LoginPage(driver);
-//        CreateAccountPage createAccountPO = new CreateAccountPage(driver);
 
         startTest(method.getName(), "Create account sample extent");
-        System.out.println(GlobalV);
-        Assert.assertTrue(loginPO.verifyPageTitle());
-        Log.info("title: "+loginPO.verifyPageTitle());
-        Assert.assertTrue(loginPO.enterTheStoreLinkIsDisplayed());
-        loginPO.selectStoreLink();
+        loginPO.verifySignInLink();
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
-//        loginPO.selectRegisterLink();
-////        createAccountPO.setUserName(userName); This line for Parameterization
-//        createAccountPO.setUserName();
-//        Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
+        loginPO.selectRegisterLink();
+        usrName = createAcFillPO.fillUserInfo();
+        createAcFillPO.fillAccountInfo("German", "Dogs");
+        createAccountPO.clickSaveAccountInformationButton();
+        Assert.assertTrue(loginPO.verifyAccountCreationMessage());
+        createAccountPO.setUserNameInLogin(usrName);
+        createAccountPO.setValueForNewPassword();
+        loginPO.clickLoginBtn();
+        Assert.assertTrue(loginPO.isMyAccountLinkDisplayed());
     }
 
 }
