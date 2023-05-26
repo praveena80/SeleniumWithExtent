@@ -40,7 +40,7 @@ public class CreateAcInfoFill extends PageObjectBase {
 
     public void checkOutAnyRandomPet() {
         homePO.selectRandomQuickLink();
-        categoriesPO.selectFirstCategory();
+        categoriesPO.selectRandomCategoryFromList();
         productsPO.clickAddToCartBtn();
         productsPO.clickProceedToCheckOutBtn();
     }
@@ -53,6 +53,7 @@ public class CreateAcInfoFill extends PageObjectBase {
 
     public void continueAndConfirmOrder(){
         productsPO.clickContinueBtn();
+        productsPO.clickConfirmBtn();
     }
 
 }

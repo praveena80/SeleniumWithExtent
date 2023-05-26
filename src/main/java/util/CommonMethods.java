@@ -35,6 +35,10 @@ public class CommonMethods {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void implicitWait(long time){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+    }
+
     public void waitForByElement( By element){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -92,7 +96,7 @@ public class CommonMethods {
     }
 
     public boolean isElementDisplayed(WebElement element) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        implicitWait(5);
         boolean result;
         try {
             element.isDisplayed();
@@ -140,7 +144,10 @@ public class CommonMethods {
 
     public void selectRandomOption(List<WebElement> element) {
         Random random = new Random();
+        implicitWait(5);
         randomIndex = random.nextInt(element.size());
-        clickOnWebElement(element.get(randomIndex));
+        WebElement element1 = element.get(randomIndex);
+        System.out.println(element1.getText());
+        clickOnWebElement(element1);
     }
 }
