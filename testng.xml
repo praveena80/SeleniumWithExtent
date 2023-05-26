@@ -10,7 +10,7 @@
 
     <test name="PetStore tests">
         <classes>
-            <class name="petStore.CreateAccountTest"/>
+            <class name="petStore.CheckoutPetTest"/>
         </classes>
     </test>
 </suite>

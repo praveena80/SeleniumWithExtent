@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
@@ -19,6 +20,8 @@ public class CommonMethods {
     public WebDriverWait wait ;
     JavascriptExecutor js;
     Actions actions;
+
+    int randomIndex;
 
     public CommonMethods(WebDriver driver) {
         this.driver = driver;
@@ -133,5 +136,11 @@ public class CommonMethods {
 
     public boolean compareTextUsingAttribute(WebElement element, String attributeName, String text) {
         return (element.getAttribute(attributeName).equals(text));
+    }
+
+    public void selectRandomOption(List<WebElement> element) {
+        Random random = new Random();
+        randomIndex = random.nextInt(element.size());
+        clickOnWebElement(element.get(randomIndex));
     }
 }
