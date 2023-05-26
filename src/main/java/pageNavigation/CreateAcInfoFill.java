@@ -2,13 +2,17 @@ package pageNavigation;
 
 import frameWork.PageObjectBase;
 import org.openqa.selenium.WebDriver;
-import pageObjects.CreateAccountPage;
+import pageObjects.*;
 
 public class CreateAcInfoFill extends PageObjectBase {
     public CreateAcInfoFill(WebDriver driver){
         super(driver);
     }
     CreateAccountPage createAccountPO = new CreateAccountPage(driver);
+    HomePage homePO = new HomePage(driver);
+    LoginPage loginPO = new LoginPage(driver);
+    CategoriesPage categoriesPO = new CategoriesPage(driver);
+    ProductsAndViewCartPage productsPO = new ProductsAndViewCartPage(driver);
 
     public String fillUserInfo() {
        createAccountPO.setUserIdTextBox();
@@ -32,6 +36,23 @@ public class CreateAcInfoFill extends PageObjectBase {
         createAccountPO.clickFavouriteCategory(fav);
         createAccountPO.clickEnableMyListCheckBox();
         createAccountPO.clickEnableMyBannerCheckBox();
+    }
+
+    public void checkOutAnyRandomPet() {
+        homePO.selectRandomQuickLink();
+        categoriesPO.selectFirstCategory();
+        productsPO.clickAddToCartBtn();
+        productsPO.clickProceedToCheckOutBtn();
+    }
+
+    public void login(){
+//        createAccountPO.setUserNameInLogin("");
+//        createAccountPO.setValueForNewPassword();
+        loginPO.clickLoginBtn();
+    }
+
+    public void continueAndConfirmOrder(){
+        productsPO.clickContinueBtn();
     }
 
 }
