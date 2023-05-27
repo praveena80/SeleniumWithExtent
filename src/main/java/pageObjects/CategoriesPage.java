@@ -28,13 +28,6 @@ public class CategoriesPage extends PageObjectBase {
     List<WebElement> listOfProducts;
 
     public void selectFirstCategory() {
-//        if(firstCategory.getText().equals("Dogs")){
-//            //list of all elements
-//            //random element
-//        } else if (comapre where you are){
-//            //all list
-//            // random
-//        }
         clickOnWebElement(firstCategory);
     }
 
