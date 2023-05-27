@@ -14,6 +14,8 @@ public class CreateAcInfoFill extends PageObjectBase {
     CategoriesPage categoriesPO = new CategoriesPage(driver);
     ProductsAndViewCartPage productsPO = new ProductsAndViewCartPage(driver);
 
+    OrderAndConfirmationPage confPO = new OrderAndConfirmationPage(driver);
+
     public String fillUserInfo() {
        createAccountPO.setUserIdTextBox();
        createAccountPO.setValueForNewPassword();
@@ -41,7 +43,7 @@ public class CreateAcInfoFill extends PageObjectBase {
     public void checkOutAnyRandomPet() {
         homePO.selectRandomQuickLink();
         categoriesPO.selectRandomCategoryFromList();
-        productsPO.clickAddToCartBtn();
+        productsPO.clickRandomAddToCartBtn();
         productsPO.clickProceedToCheckOutBtn();
     }
 
@@ -51,9 +53,10 @@ public class CreateAcInfoFill extends PageObjectBase {
         loginPO.clickLoginBtn();
     }
 
-    public void continueAndConfirmOrder(){
+    public String continueAndConfirmOrder(){
         productsPO.clickContinueBtn();
-        productsPO.clickConfirmBtn();
+        confPO.clickConfirmBtn();
+        return confPO.getOrderNum();
     }
 
 }

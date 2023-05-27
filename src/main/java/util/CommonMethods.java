@@ -150,4 +150,8 @@ public class CommonMethods {
         System.out.println(element1.getText());
         clickOnWebElement(element1);
     }
+
+    public void scrollToElement(WebElement element){
+        js.executeScript("arguments[0].scrollIntoView();",element);
+    }
 }

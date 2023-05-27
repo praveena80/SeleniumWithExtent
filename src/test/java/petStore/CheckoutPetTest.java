@@ -1,6 +1,7 @@
 package petStore;
 
 import baseTest.BaseTest;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -9,10 +10,12 @@ import pageNavigation.CreateAcInfoFill;
 import pageObjects.HomePage;
 import pageObjects.OrderAndConfirmationPage;
 import pageObjects.ProductsAndViewCartPage;
+import util.extentReport.ExtentTestManager;
 import util.logs.Log;
 
 import java.lang.reflect.Method;
 
+import static util.extentReport.ExtentTestManager.getTest;
 import static util.extentReport.ExtentTestManager.startTest;
 
 public class CheckoutPetTest extends BaseTest {
@@ -35,9 +38,10 @@ public class CheckoutPetTest extends BaseTest {
         startTest(method.getName(), "Checkout random pet");
         pageNavigation.checkOutAnyRandomPet();
         pageNavigation.login();
-        pageNavigation.continueAndConfirmOrder();
-        Log.info("Order Num: " + confPO.getOrderNum());
+        String ordNum = pageNavigation.continueAndConfirmOrder();
+        getTest().log(Status.INFO, "Order Num: " + ordNum);
         Assert.assertTrue(checkOutPO.verifyConfirmationMsg());
+        getTest().log(Status.INFO,"Ordered Pet : "+confPO.getOrderedPetText());
     }
 
 }
