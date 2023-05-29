@@ -32,7 +32,7 @@ public class CheckoutPetTest extends BaseTest {
         confPO = new OrderAndConfirmationPage(driver);
     }
 
-//    @Test(description = "Testing this")
+    @Test(description = "Testing this")
     public void checkOutRandomPet(Method method) {
 
         startTest(method.getName(), "Checkout random pet");
