@@ -2,6 +2,7 @@ package pageNavigation;
 
 import frameWork.PageObjectBase;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pageObjects.*;
 
 public class CreateAcInfoFill extends PageObjectBase {
@@ -51,6 +52,13 @@ public class CreateAcInfoFill extends PageObjectBase {
 //        createAccountPO.setUserNameInLogin("");
 //        createAccountPO.setValueForNewPassword();
         loginPO.clickLoginBtn();
+    }
+
+    public void checkOutPet(String link) {
+        homePO.selectQuickLink(link);
+        categoriesPO.selectLastItemFromList();
+        productsPO.clickLastAddToCart();
+        productsPO.clickProceedToCheckOutBtn();
     }
 
     public String continueAndConfirmOrder(){

@@ -27,7 +27,19 @@ public class HomePage extends PageObjectBase {
     (@FindBy(xpath = "//div[@id=\"QuickLinks\"]/a"))
     List<WebElement> quickLinks;
 
+    @FindBy(xpath = "*//a[contains(text(),'Reptiles')]")
+    WebElement reptilesLink;
+    @FindBy(xpath = "*//a[contains(text(),'Dogs')]")
+    WebElement dogsLink;
     public void selectRandomQuickLink(){
         selectRandomOption(quickLinks);
+    }
+
+    public void selectQuickLink(String link) {
+        if(link == "Reptiles"){
+            clickOnWebElement(reptilesLink);
+        } else if( link == "Dogs"){
+            clickOnWebElement(dogsLink);
+        }
     }
 }

@@ -46,6 +46,15 @@ public class ProductsAndViewCartPage extends PageObjectBase {
         selectRandomOption(addToCartBtns);
     }
 
+    public void clickLastAddToCart(){
+        int size = addToCartBtns.size();
+        for(int i =size-1; i<=size; i++){
+            if(i== size){
+                clickOnWebElement(addToCartBtns.get(size-1));
+            }
+        }
+    }
+
     public void clickProceedToCheckOutBtn(){
         clickOnWebElement(proceedToCheckoutBtn);
     }

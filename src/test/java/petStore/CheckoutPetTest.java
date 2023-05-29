@@ -32,7 +32,7 @@ public class CheckoutPetTest extends BaseTest {
         confPO = new OrderAndConfirmationPage(driver);
     }
 
-    @Test(description = "Testing this")
+//    @Test(description = "Testing this")
     public void checkOutRandomPet(Method method) {
 
         startTest(method.getName(), "Checkout random pet");
@@ -44,4 +44,27 @@ public class CheckoutPetTest extends BaseTest {
         getTest().log(Status.INFO,"Ordered Pet : "+confPO.getOrderedPetText());
     }
 
+    @Test(description = "Testing this")
+    public void checkOutReptileLastOption(Method method) {
+
+        startTest(method.getName(), "Checkout random pet");
+        pageNavigation.checkOutPet("Reptiles");
+        pageNavigation.login();
+        String ordNum = pageNavigation.continueAndConfirmOrder();
+        getTest().log(Status.INFO, "Order Num: " + ordNum);
+        Assert.assertTrue(checkOutPO.verifyConfirmationMsg());
+        getTest().log(Status.INFO,"Ordered Pet : "+confPO.getOrderedPetText());
+    }
+
+    @Test(description = "Testing this")
+    public void checkOutDogsLastOption(Method method) {
+
+        startTest(method.getName(), "Checkout random pet");
+        pageNavigation.checkOutPet("Dogs");
+        pageNavigation.login();
+        String ordNum = pageNavigation.continueAndConfirmOrder();
+        getTest().log(Status.INFO, "Order Num: " + ordNum);
+        Assert.assertTrue(checkOutPO.verifyConfirmationMsg());
+        getTest().log(Status.INFO,"Ordered Pet : "+confPO.getOrderedPetText());
+    }
 }

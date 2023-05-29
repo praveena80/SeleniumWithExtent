@@ -34,4 +34,13 @@ public class CategoriesPage extends PageObjectBase {
     public void selectRandomCategoryFromList(){
         selectRandomOption(listOfProducts);
     }
+
+    public void selectLastItemFromList() {
+        int num = listOfProducts.size();
+        for(int i =num-1; i<=num; i++){
+            if(i== num){
+                clickOnWebElement(listOfProducts.get(num-1));
+            }
+        }
+    }
 }
