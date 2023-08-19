@@ -29,10 +29,21 @@ public class CreateAccountTest extends BaseTest {
 
     String usrName;
 
-    @Test(description = "create account")
-    public void createAccount(Method method) {
+    @Test (priority = 2)
+    public void loginUsingCreatedAccount(Method method) {
+        startTest(method.getName(), "Login using newly created account user details");
 
+        loginPO.selectSignInLick();
+        createAccountPO.setUserNameInLogin(usrName);
+        createAccountPO.setValueForNewPassword();
+        loginPO.clickLoginBtn();
+        Assert.assertTrue(loginPO.isMyAccountLinkDisplayed());
+    }
+
+    @Test(description = "create account", priority = 1)
+    public void createAccount(Method method) {
         startTest(method.getName(), "Create account sample extent");
+
         loginPO.verifySignInLink();
         loginPO.selectSignInLick();
         Assert.assertEquals(loginPO.getRegisterLinkText(), "Register Now!");
@@ -41,10 +52,6 @@ public class CreateAccountTest extends BaseTest {
         createAcFillPO.fillAccountInfo("German", "Dogs");
         createAccountPO.clickSaveAccountInformationButton();
         Assert.assertTrue(loginPO.verifyAccountCreationMessage());
-        createAccountPO.setUserNameInLogin(usrName);
-        createAccountPO.setValueForNewPassword();
-        loginPO.clickLoginBtn();
-        Assert.assertTrue(loginPO.isMyAccountLinkDisplayed());
     }
 
 }

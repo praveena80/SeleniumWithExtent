@@ -69,8 +69,8 @@ public class CreateAccountPage extends PageObjectBase {
     public void setValueForRepeatedPassword() {sendKeysInTextBox(repeatedPasswordTextBox,pwd);}
     public void setValueForFirstName(int num) {sendKeysInTextBox(firstNameTextBox,generateRandomString(num));}
     public void setValuesForLastName() {sendKeysInTextBox(lastNameTextBox,generateRandomString(5));}
-    public void setValueForEmail() {sendKeysInTextBox(emailTextBox,"abcd@gmail.com");}
-    public void setValueForPhoneNumber() {sendKeysInTextBox(phoneTextBox,"1234567809");}
+    public void setValueForEmail() {sendKeysInTextBox(emailTextBox,generateRandomString(5)+"@gmail.com");}
+    public void setValueForPhoneNumber() {sendKeysInTextBox(phoneTextBox,"123"+generateRandomNumString(3)+generateRandomNumString(4));}
     public void setValueForAddress1() {sendKeysInTextBox(address1TextBox,"Alpine Drive");}
     public void setValueForAddress2() {sendKeysInTextBox(address2TextBox,"Taft Road");}
     public void setValueForCity() {sendKeysInTextBox(cityTextBox,"Farmington");}

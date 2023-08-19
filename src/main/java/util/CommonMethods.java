@@ -20,6 +20,7 @@ public class CommonMethods {
     public WebDriverWait wait ;
     JavascriptExecutor js;
     Actions actions;
+    Random random;
 
     int randomIndex;
 
@@ -28,6 +29,7 @@ public class CommonMethods {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         js = (JavascriptExecutor) driver;
         actions = new Actions(driver);
+        random = new Random();
     }
 
     public void waitForElement( WebElement element){
@@ -143,12 +145,22 @@ public class CommonMethods {
     }
 
     public void selectRandomOption(List<WebElement> element) {
-        Random random = new Random();
+//        Random random = new Random();
         implicitWait(5);
         randomIndex = random.nextInt(element.size());
         WebElement element1 = element.get(randomIndex);
         System.out.println(element1.getText());
         clickOnWebElement(element1);
+    }
+
+    public String generateRandomNumString(int length) {
+//        Random random = new Random();
+        String randomNumString = "";
+        for(int i =0; i<length; i++){
+            int digit = random.nextInt(10);
+            randomNumString += digit;
+        }
+        return  randomNumString;
     }
 
     public void scrollToElement(WebElement element){
