@@ -10,14 +10,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends PageObjectBase {
-    /**
-     * Page factory initiation is required for elements
-     * @param driverFromConstructor
-     */
     // Constructor
     // Gets called when object of this page is created in MainClass.java
-    public LoginPage(WebDriver driverFromConstructor) {
-        super(driverFromConstructor);
+//    public LoginPage(WebDriver driverFromConstructor) {
+//        super(driverFromConstructor);
+//        PageFactory.initElements(driver, this);
+//    }
+    public LoginPage() {
+        super();
         PageFactory.initElements(driver, this);
     }
 

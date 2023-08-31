@@ -10,14 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class ProductsAndViewCartPage extends PageObjectBase {
-    /**
-     * Passing Webdriver object so that each class
-     * can access the current browser instance
-     *
-     * @param driver
-     */
-    public ProductsAndViewCartPage(WebDriver driver) {
-        super(driver);
+
+//    public ProductsAndViewCartPage(WebDriver driver) {
+//        super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
+    public ProductsAndViewCartPage() {
+        super();
         PageFactory.initElements(driver, this);
     }
 

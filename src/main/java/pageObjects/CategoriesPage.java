@@ -10,14 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class CategoriesPage extends PageObjectBase {
-    /**
-     * Passing Webdriver object so that each class
-     * can access the current browser instance
-     *
-     * @param driver
-     */
-    public CategoriesPage(WebDriver driver) {
-        super(driver);
+//    public CategoriesPage(WebDriver driver) {
+//        super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
+    public CategoriesPage() {
+        super();
         PageFactory.initElements(driver, this);
     }
 

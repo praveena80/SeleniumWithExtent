@@ -12,14 +12,12 @@ import java.util.List;
 import java.util.Random;
 
 public class HomePage extends PageObjectBase {
-    /**
-     * Passing Webdriver object so that each class
-     * can access the current browser instance
-     *
-     * @param driver
-     */
-    public HomePage(WebDriver driver) {
-        super(driver);
+//    public HomePage(WebDriver driver) {
+//        super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
+    public HomePage() {
+        super();
         PageFactory.initElements(driver, this);
     }
 

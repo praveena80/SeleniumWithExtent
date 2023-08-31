@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class CommonMethods {
-    protected WebDriver driver;
+    protected WebDriver driver = DriverManager.getDriver();
     public WebDriverWait wait ;
     JavascriptExecutor js;
     Actions actions;
@@ -24,8 +24,15 @@ public class CommonMethods {
 
     int randomIndex;
 
-    public CommonMethods(WebDriver driver) {
-        this.driver = driver;
+//    public CommonMethods(WebDriver driver) {
+//        this.driver = driver;
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        js = (JavascriptExecutor) driver;
+//        actions = new Actions(driver);
+//        random = new Random();
+//    }
+
+    public CommonMethods() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         js = (JavascriptExecutor) driver;
         actions = new Actions(driver);

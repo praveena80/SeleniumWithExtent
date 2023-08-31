@@ -11,8 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateAccountPage extends PageObjectBase {
 
-    public CreateAccountPage(WebDriver driver) {
-        super(driver);
+//    public CreateAccountPage(WebDriver driver) {
+//        super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
+    public CreateAccountPage() {
+        super();
         PageFactory.initElements(driver, this);
     }
 
