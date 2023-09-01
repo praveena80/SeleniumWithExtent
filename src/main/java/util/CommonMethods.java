@@ -1,9 +1,6 @@
 package util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -64,6 +61,13 @@ public class CommonMethods {
         waitForElement(element);
         element.clear();
         element.sendKeys(text);
+    }
+
+    public void sendKeysAndPressingTabKey(WebElement element, String text){
+        waitForElement(element);
+        element.clear();
+        element.sendKeys(text);
+        element.sendKeys(Keys.TAB);
     }
 
     public void selectByVisibleText(WebElement element, String text) {
