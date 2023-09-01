@@ -14,13 +14,13 @@ import java.util.List;
 
 public class PageObjectBase extends CommonMethods {
 
-    /**
-     * Passing Webdriver object so that each class
-     * can access the current browser instance
-     * @param driver
-     */
-    public PageObjectBase(WebDriver driver) {
-       super(driver);
+//    public PageObjectBase(WebDriver driver) {
+//       super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
+
+    public PageObjectBase() {
+        super();
         PageFactory.initElements(driver, this);
     }
 

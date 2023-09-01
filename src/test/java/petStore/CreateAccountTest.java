@@ -22,9 +22,9 @@ public class CreateAccountTest extends BaseTest {
     @BeforeMethod
     public void setup() {
         driver = getDriver();
-        loginPO = new LoginPage(driver);
-        createAccountPO = new CreateAccountPage(driver);
-        createAcFillPO = new CreateAcInfoFill(driver);
+        loginPO = new LoginPage();
+        createAccountPO = new CreateAccountPage();
+        createAcFillPO = new CreateAcInfoFill();
     }
 
     String usrName;

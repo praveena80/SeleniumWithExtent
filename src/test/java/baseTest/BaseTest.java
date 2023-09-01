@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import util.DriverManager;
 import util.dataProvider.PropertyManager;
 import util.logs.Log;
 
@@ -19,7 +20,7 @@ public class BaseTest {
     String browserType = PropertyManager.getInstance().getBrowserType();
 
     public WebDriver getDriver() {
-        return driver;
+        return DriverManager.getDriver();
     }
 
     //********************************************************
@@ -64,12 +65,9 @@ public class BaseTest {
     // With this can run tests from test classes
     //*******************************************
     private void setDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        chromeOptions.addArguments("--remote-allow-origins=*");
         switch (browserType) {
             case "chrome" :
-                driver = new ChromeDriver(chromeOptions);
+                driver = DriverManager.getDriver();
                 WebDriverManager.chromedriver().setup();
                 initialization();
                 break;
@@ -100,7 +98,7 @@ public class BaseTest {
     public void tearDown() {
         Log.info("Tests are ending!");
         driver.close();
-        driver.quit();
+        DriverManager.quitDriver();
     }
 }
 

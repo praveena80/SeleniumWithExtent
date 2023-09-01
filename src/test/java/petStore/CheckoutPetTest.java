@@ -27,8 +27,8 @@ public class CheckoutPetTest extends BaseTest {
     @BeforeMethod
     public void setup() {
         driver = getDriver();
-        pageNavigation = new CreateAcInfoFill(driver);
-        checkOutPO = new ProductsAndViewCartPage(driver);
+        pageNavigation = new CreateAcInfoFill();
+        checkOutPO = new ProductsAndViewCartPage();
         confPO = new OrderAndConfirmationPage(driver);
     }
 

@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import pageObjects.*;
 
 public class CreateAcInfoFill extends PageObjectBase {
-    public CreateAcInfoFill(WebDriver driver){
-        super(driver);
+    public CreateAcInfoFill(){
+        super();
     }
-    CreateAccountPage createAccountPO = new CreateAccountPage(driver);
-    HomePage homePO = new HomePage(driver);
-    LoginPage loginPO = new LoginPage(driver);
-    CategoriesPage categoriesPO = new CategoriesPage(driver);
-    ProductsAndViewCartPage productsPO = new ProductsAndViewCartPage(driver);
+    CreateAccountPage createAccountPO = new CreateAccountPage();
+    HomePage homePO = new HomePage();
+    LoginPage loginPO = new LoginPage();
+    CategoriesPage categoriesPO = new CategoriesPage();
+    ProductsAndViewCartPage productsPO = new ProductsAndViewCartPage();
 
     OrderAndConfirmationPage confPO = new OrderAndConfirmationPage(driver);
 

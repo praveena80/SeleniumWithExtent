@@ -14,7 +14,7 @@ public class HomePage extends PageObjectBase {
      * @param driver
      */
     public HomePage(WebDriver driver) {
-        super(driver);
+        super();
     }
 
     @FindBy (xpath = "//button/span[contains(text(),'Get')]")

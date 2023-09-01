@@ -13,8 +13,12 @@ public class OrderAndConfirmationPage extends PageObjectBase {
      *
      * @param driver
      */
+//    public OrderAndConfirmationPage(WebDriver driver) {
+//        super(driver);
+//        PageFactory.initElements(driver, this);
+//    }
     public OrderAndConfirmationPage(WebDriver driver) {
-        super(driver);
+        super();
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//*[@id=\"CenterForm\"]/form/div/button[1]")
