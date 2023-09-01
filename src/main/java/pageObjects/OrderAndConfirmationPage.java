@@ -7,17 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OrderAndConfirmationPage extends PageObjectBase {
-    /**
-     * Passing Webdriver object so that each class
-     * can access the current browser instance
-     *
-     * @param driver
-     */
+
 //    public OrderAndConfirmationPage(WebDriver driver) {
 //        super(driver);
 //        PageFactory.initElements(driver, this);
 //    }
-    public OrderAndConfirmationPage(WebDriver driver) {
+    public OrderAndConfirmationPage() {
         super();
         PageFactory.initElements(driver, this);
     }

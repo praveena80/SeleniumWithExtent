@@ -2,16 +2,12 @@ package petStore;
 
 import baseTest.BaseTest;
 import com.aventstack.extentreports.Status;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageNavigation.CreateAcInfoFill;
-import pageObjects.HomePage;
 import pageObjects.OrderAndConfirmationPage;
 import pageObjects.ProductsAndViewCartPage;
-import util.extentReport.ExtentTestManager;
-import util.logs.Log;
 
 import java.lang.reflect.Method;
 
@@ -19,17 +15,16 @@ import static util.extentReport.ExtentTestManager.getTest;
 import static util.extentReport.ExtentTestManager.startTest;
 
 public class CheckoutPetTest extends BaseTest {
-    private WebDriver driver;
     CreateAcInfoFill pageNavigation;
     ProductsAndViewCartPage checkOutPO;
     OrderAndConfirmationPage confPO;
 
     @BeforeMethod
     public void setup() {
-        driver = getDriver();
+        getDriver();
         pageNavigation = new CreateAcInfoFill();
         checkOutPO = new ProductsAndViewCartPage();
-        confPO = new OrderAndConfirmationPage(driver);
+        confPO = new OrderAndConfirmationPage();
     }
 
     @Test(description = "Testing this")

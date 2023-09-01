@@ -1,7 +1,6 @@
 package petStore;
 
 import baseTest.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,14 +13,13 @@ import java.lang.reflect.Method;
 import static util.extentReport.ExtentTestManager.startTest;
 
 public class CreateAccountTest extends BaseTest {
-    private WebDriver driver;
     LoginPage loginPO;
     CreateAccountPage createAccountPO;
     CreateAcInfoFill createAcFillPO;
 
     @BeforeMethod
     public void setup() {
-        driver = getDriver();
+        getDriver();
         loginPO = new LoginPage();
         createAccountPO = new CreateAccountPage();
         createAcFillPO = new CreateAcInfoFill();

@@ -15,7 +15,7 @@ public class CreateAcInfoFill extends PageObjectBase {
     CategoriesPage categoriesPO = new CategoriesPage();
     ProductsAndViewCartPage productsPO = new ProductsAndViewCartPage();
 
-    OrderAndConfirmationPage confPO = new OrderAndConfirmationPage(driver);
+    OrderAndConfirmationPage confPO = new OrderAndConfirmationPage();
 
     public String fillUserInfo() {
        createAccountPO.setUserIdTextBox();
