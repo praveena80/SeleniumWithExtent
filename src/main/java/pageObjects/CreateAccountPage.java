@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.text.ParseException;
+
 
 public class CreateAccountPage extends PageObjectBase {
 
@@ -76,7 +78,7 @@ public class CreateAccountPage extends PageObjectBase {
     public void setValueForEmail() {sendKeysInTextBox(emailTextBox,generateRandomString(5)+"@gmail.com");}
     public void setValueForPhoneNumber() {sendKeysInTextBox(phoneTextBox,"123"+generateRandomNumString(3)+generateRandomNumString(4));}
     public void setValueForAddress1() {sendKeysInTextBox(address1TextBox,"Alpine Drive");}
-    public void setValueForAddress2() {sendKeysInTextBox(address2TextBox,"Taft Road");}
+    public void setValueForAddress2() throws ParseException {sendKeysInTextBox(address2TextBox,getDate().toString());}
     public void setValueForCity() {sendKeysInTextBox(cityTextBox,"Farmington");}
     public void setValueForState() {sendKeysInTextBox(stateTextBox,"MI");}
     public void setValueForZip(){sendKeysInTextBox(zipTextBox,"48335");}

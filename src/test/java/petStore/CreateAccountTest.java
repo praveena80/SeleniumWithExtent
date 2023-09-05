@@ -9,6 +9,7 @@ import pageObjects.CreateAccountPage;
 import pageObjects.LoginPage;
 
 import java.lang.reflect.Method;
+import java.text.ParseException;
 
 import static util.extentReport.ExtentTestManager.startTest;
 
@@ -39,7 +40,7 @@ public class CreateAccountTest extends BaseTest {
     }
 
     @Test(description = "create account", priority = 1)
-    public void createAccount(Method method) {
+    public void createAccount(Method method) throws ParseException {
         startTest(method.getName(), "Create account sample extent");
 
         loginPO.verifySignInLink();

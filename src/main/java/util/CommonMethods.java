@@ -6,7 +6,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +24,9 @@ public class CommonMethods {
     Random random;
 
     int randomIndex;
+
+    Calendar calendar = Calendar.getInstance();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 
 //    public CommonMethods(WebDriver driver) {
 //        this.driver = driver;
@@ -176,5 +183,37 @@ public class CommonMethods {
 
     public void scrollToElement(WebElement element){
         js.executeScript("arguments[0].scrollIntoView();",element);
+    }
+
+    /**
+     * Date
+     */
+    public Date getDate() throws ParseException {
+        Date today = new Date();
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(today);
+//        String formattedDate = dateFormat.format(today);
+        String fDate = formattedDate(today);
+//        Date currentDate = dateFormat.parse(formattedDate);
+        return getParseDate(fDate);
+    }
+
+    public String formattedDate(Date date) {
+        String formattedDate = dateFormat.format(date);
+        return formattedDate;
+    }
+
+    public Date getParseDate(String date) throws ParseException {
+        Date pDate = dateFormat.parse(date);
+        return pDate;
+    }
+
+    public Date getYesterdaysDate() throws ParseException {
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+        Date yesterday = calendar.getTime();
+//        String formattedYesterday = dateFormat.format(yesterday);
+//        Date yesterDayDate = dateFormat.parse(formattedYesterday);
+        String yDate = formattedDate(yesterday);
+        return getParseDate(yDate);
     }
 }

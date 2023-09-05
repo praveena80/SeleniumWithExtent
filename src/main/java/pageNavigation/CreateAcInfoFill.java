@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageObjects.*;
 
+import java.text.ParseException;
+
 public class CreateAcInfoFill extends PageObjectBase {
     public CreateAcInfoFill(){
         super();
@@ -24,7 +26,7 @@ public class CreateAcInfoFill extends PageObjectBase {
        return createAccountPO.getUserName();
     }
 
-    public void fillAccountInfo(String category, String fav){
+    public void fillAccountInfo(String category, String fav) throws ParseException {
         createAccountPO.setValueForFirstName(5);
         createAccountPO.setValuesForLastName();
         createAccountPO.setValueForEmail();
