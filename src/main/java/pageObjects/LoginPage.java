@@ -1,6 +1,7 @@
 package pageObjects;
 
 import frameWork.PageObjectBase;
+import interfaces.LoginPageInterface;
 import io.reactivex.rxjava3.observers.BaseTestConsumer;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
@@ -9,13 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends PageObjectBase {
-    // Constructor
-    // Gets called when object of this page is created in MainClass.java
-//    public LoginPage(WebDriver driverFromConstructor) {
-//        super(driverFromConstructor);
-//        PageFactory.initElements(driver, this);
-//    }
+public class LoginPage extends PageObjectBase implements LoginPageInterface {
     public LoginPage() {
         super();
         PageFactory.initElements(driver, this);
